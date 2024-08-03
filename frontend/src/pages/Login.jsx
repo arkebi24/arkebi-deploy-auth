@@ -53,9 +53,10 @@ function Login() {
             handleError(err);
         }
     }
-
+    const currentTime = new Date().toLocaleTimeString();
     return (
         <div className='container'>
+            <p className='time'><strong>Current Time: </strong><span>{currentTime}</span></p>
             <h1>Login</h1>
             <form onSubmit={handleLogin}>
                 <div>
