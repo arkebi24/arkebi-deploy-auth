@@ -22,7 +22,7 @@ function Profile() {
 
     const fetchProfile = async () => {
         try {
-            const url = "http://localhost:8080/profile";
+            const url = "https://arkebi-deploy-auth-api.vercel.app/profile";
             const headers = {
                 headers: {
                     'Authorization': localStorage.getItem('token')

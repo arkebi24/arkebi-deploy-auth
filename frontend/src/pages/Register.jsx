@@ -28,7 +28,7 @@ function Register() {
             return handleError('name, email, password, country and phonenumber are required')
         }
         try {
-            const url = `http://localhost:8080/auth/register`;
+            const url = `https://arkebi-deploy-auth-api.vercel.app/auth/register`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
