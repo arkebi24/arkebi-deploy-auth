@@ -145,3 +145,7 @@ button{
   cursor: pointer;
   margin: 10px 0;
 }
+
+.time {
+  color: black;
+}
