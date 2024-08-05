@@ -9,9 +9,9 @@ const registerValidation = (req, res, next) => {
         country: Joi.string().required(),
         phonenumber: Joi.string().pattern(/^[0-9]{10,15}$/).required()
     });
-    const {err} = schema.valid(req.body);
-    if(err) {
-        return res.status(400).json({ message: "Bad request", err })
+    const {error} = schema.validate(req.body);
+    if(error) {
+        return res.status(400).json({ message: "Bad request", error })
     }
     next();
 }
@@ -21,9 +21,9 @@ const loginValidation = (req, res, next) => {
         email: Joi.string().email().required(),
         password: Joi.string().min(4).max(100).required(),
     });
-    const {err} = schema.valid(req.body);
-    if(err) {
-        return res.status(400).json({ message: "Bad request", err })
+    const {error} = schema.validate(req.body);
+    if(error) {
+        return res.status(400).json({ message: "Bad request", error })
     }
     next();
 }
